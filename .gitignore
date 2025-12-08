@@ -1,0 +1,21 @@
+# Build outputs (regenerated on each build)
+docs/docs/api-reference/
+docs/docs/sdk-reference/
+docs/site/
+
+# Temporary build artifacts
+tmp/
+*.pyc
+__pycache__/
+node_modules/
+.DS_Store
+
+# Environment
+.env
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
