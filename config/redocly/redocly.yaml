@@ -1,0 +1,3 @@
+apis:
+  nfl-api:
+    root: docs/docs/openapi/nfl-com-api.yaml
