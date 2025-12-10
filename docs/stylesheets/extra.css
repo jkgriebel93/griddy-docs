@@ -31,6 +31,55 @@
   border-radius: 4px;
 }
 
+/* mkdocstrings specific styling */
+.doc-heading {
+  font-family: 'Space Grotesk', var(--md-text-font-family);
+}
+
+.doc-symbol-toc {
+  font-size: 0.85em;
+}
+
+/* Function/method signature styling */
+.doc-signature {
+  background-color: var(--griddy-purple-50);
+  border-left: 4px solid var(--md-primary-fg-color);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+[data-md-color-scheme="slate"] .doc-signature {
+  background-color: rgba(124, 58, 237, 0.1);
+}
+
+/* Parameter tables */
+.doc-param-name {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+}
+
+.doc-param-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  color: var(--md-accent-fg-color);
+}
+
+/* Source code toggle */
+details.quote {
+  border-color: var(--md-primary-fg-color);
+}
+
+details.quote summary {
+  color: var(--md-primary-fg-color);
+}
+
+/* Breadcrumb styling for nested modules */
+.md-typeset em:first-child {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85em;
+}
+
 /* Custom admonition for Pro API features */
 .md-typeset .admonition.pro,
 .md-typeset details.pro {

@@ -9,8 +9,9 @@ edit_uri: edit/main/docs/docs/
 theme:
   name: material
   custom_dir: overrides/
-  logo: assets/images/griddy-primary.svg
-  favicon: assets/images/griddy-icon-only.ico
+
+
+
   palette:
     # Light Mode - Electric Grid palette
     - media: "(prefers-color-scheme: light)"
@@ -28,9 +29,11 @@ theme:
       toggle:
         icone: material/brightness-4
         name: Switch to light mode
+
   font:
     text: Inter
     code: Jetbrains Mono
+
   features:
     - navigation.instant
     - navigation.tracking
@@ -46,8 +49,12 @@ theme:
     - content.tabs.link
     - content.code.copy
     - content.code.annotate
+
   icon:
     repo: fontawesome/brands/github
+
+  logo: assets/images/griddy-primary.svg
+  favicon: assets/images/griddy-icon-only.ico
 
 extra_css:
   - assets/css/custom.css
@@ -79,27 +86,58 @@ markdown_extensions:
 plugins:
   - search:
       lang: en
-  - minify:
-      minify_html: true
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+
+  # Auto generated docs for Python SDK
+  - gen-files:
+      scripts:
+        - gen_ref_pages.py
+
+  - literate-nav:
+      nav_file: SUMMARY.md
+
   - mkdocstrings:
       default_handler: python
       handlers:
         python:
+          paths:
+            - ../tmp/python-sdk/src
           options:
             docstring_style: google
             docstring_options:
               ignore_init_summary: false
-            merge_init_into_class: true
-            show_source: true
+            docstring_section_style: spacy
+
             show_root_heading: true
             show_root_full_path: false
+            show_root_toc_entry: true
             show_symbol_type_heading: true
             show_symbol_type_toc: true
+            show_category_heading: true
+
             members_order: source
-            heading_level: 2
+            group_by_category: true
+            show_submodules: false
+
+            show_signatures: true
             show_signature_annotations: true
             separate_signature: true
             signature_crossrefs: true
+
+            show_source: true
+
+            show_bases: true
+            show_inheritance_diagram: true
+
+            merge_init_into_class: true
+
+            inherited_members: false
+            filters:
+              - "!^_"        # Exclude private members
+              - "^__init__$" # But include __init__
+
+  - minify:
+      minify_html: true
 
 nav:
   - Home: index.md
@@ -134,10 +172,10 @@ nav:
     - Fantasy Integration: examples/fantasy-integration.md
   - API Reference:
     - NFL API: api-reference/index.html
-    - Pro API: api-reference/pro.html
   - SDK Reference:
+    - sdk-reference/index.md
     - Python SDK: sdk-reference/python/index.html
-    - TypeScript SDK: sdk-reference/typescript/index.html
+    # - TypeScript SDK: sdk-reference/typescript/index.html
   - Contributing:
     - contributing/index.md
     - Development Setup: contributing/development-setup.md

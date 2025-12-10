@@ -1,11 +1,13 @@
 # Build outputs (regenerated on each build)
 docs/docs/api-reference/*.html
-docs/docs/sdk-reference/python/
+docs/docs/sdk-reference/typescript
 docs/site/
 
 # Temporary build artifacts
 tmp/
 !tmp/.gitkeep
+
+docs/site/
 
 # Python
 __pycache__/

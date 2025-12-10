@@ -53,7 +53,7 @@ Welcome to the complete documentation for Griddy, your NFL API SDK toolkit.
 ## Feature Highlights
 
 - **🔐 Smart Authentication** - Automatic token refresh with thread-safe operations
-- **📊 Complete API Coverage** - Access to both public NFL API and premium Pro API
+- **📊 Near Complete API Coverage** - Access to Regular, Pro, and Next Gen Stats API endpoints, with more added as they are discovered.
 - **🔄 Type Safety** - Full type hints (Python) and TypeScript definitions
 - **⚡ Async Support** - Built on httpx for modern async/await patterns
 
