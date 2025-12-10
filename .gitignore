@@ -1,21 +1,34 @@
 # Build outputs (regenerated on each build)
-docs/docs/api-reference/
-docs/docs/sdk-reference/
+docs/docs/api-reference/*.html
+docs/docs/sdk-reference/python/
 docs/site/
 
 # Temporary build artifacts
 tmp/
-*.pyc
-__pycache__/
-node_modules/
-.DS_Store
+!tmp/.gitkeep
 
-# Environment
-.env
-.venv/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
 venv/
+.venv
 
 # IDE
 .vscode/
 .idea/
 *.swp
+
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local

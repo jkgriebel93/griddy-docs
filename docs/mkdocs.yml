@@ -2,7 +2,9 @@ site_name: Griddy Developer Documentation
 site_url: https://jkgriebel93.github.io/griddy-docs/
 site_description: Documentation for all American Football data sources that Griddy currently supports
 site_author: John Griebel
+repo_name: jkgriebel93/griddy-docs
 repo_url: https://github.com/jkgriebel93/griddy-docs
+edit_uri: edit/main/docs/docs/
 
 theme:
   name: material
@@ -10,88 +12,69 @@ theme:
   logo: assets/images/griddy-primary.svg
   favicon: assets/images/griddy-icon-only.ico
   palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
+    # Light Mode - Electric Grid palette
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: cyan
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: indigo
+    # Dark Mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: cyan
       toggle:
-        icon: material/brightness-4
+        icone: material/brightness-4
         name: Switch to light mode
+  font:
+    text: Inter
+    code: Jetbrains Mono
   features:
+    - navigation.instant
+    - navigation.tracking
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
-    - navigation.top
-    - navigation.tracking
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
     - search.suggest
     - search.highlight
+    - content.tabs.link
     - content.code.copy
     - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
 
-nav:
-  - Home: index.md
+extra_css:
+  - assets/css/custom.css
 
-  - Getting Started:
-      - Overview: getting-started/index.md
-      - Installation: getting-started/installation.md
-      - Authentication: getting-started/authentication.md
-      - Python Quick Start: getting-started/quickstart-python.md
-
-  - User Guides:
-      - Overview: guides/index.md
-      - Authentication:
-          - Browser Tokens: guides/authentication/browser-tokens.md
-          - Token Refresh: guides/authentication/token-refresh.md
-          - Pro API Auth: guides/authentication/pro-api-auth.md
-      - Common Patterns:
-          - Pagination: guides/common-patterns/pagination.md
-          - Error Handling: guides/common-patterns/error-handling.md
-          - Rate Limiting: guides/common-patterns/rate-limiting.md
-          - Caching: guides/common-patterns/caching.md
-      - Data Models:
-          - Games: guides/data-models/games.md
-          - Players: guides/data-models/players.md
-          - Stats: guides/data-models/stats.md
-          - Schedules: guides/data-models/schedules.md
-
-  - Tutorials:
-      - Overview: tutorials/index.md
-      - First API Call: tutorials/first-api-call.md
-      - Game Stats Dashboard: tutorials/game-stats-dashboard.md
-      - Player Comparison: tutorials/player-comparison.md
-      - Live Score Tracker: tutorials/live-score-tracker.md
-
-  - Code Examples:
-      - Overview: examples/index.md
-      - Python:
-          - Basic Usage: examples/python/basic-usage.md
-          - Async Patterns: examples/python/async-patterns.md
-          - Testing: examples/python/testing-strategies.md
-
-  - API Reference:
-      - OpenAPI Documentation: api-reference/index.html
-      - Pro API: api-reference/pro.html
-      - Regular vs Pro: api-reference/comparison.md
-
-  - SDK Reference:
-      - Python SDK: sdk-reference/python/index.html
-      - TypeScript SDK: sdk-reference/typescript/index.html
-      - SDK Comparison: sdk-reference/comparison.md
-
-  - Contributing:
-      - Overview: contributing/index.md
-      - Code of Conduct: contributing/code-of-conduct.md
-      - SDK Development: contributing/sdk-development.md
-      - Testing Strategy: contributing/testing.md
-      - Documentation: contributing/documentation.md
-
-  - FAQ: faq.md
-  - Changelog: changelog.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
 
 plugins:
   - search:
@@ -118,28 +101,54 @@ plugins:
             separate_signature: true
             signature_crossrefs: true
 
-markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.details
-  - admonition
-  - attr_list
-  - md_in_html
-  - toc:
-      permalink: true
-      toc_depth: 3
-  - tables
-  - def_list
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - Installation: getting-started/installation.md
+    - Authentication: getting-started/authentication.md
+    - Python Quickstart: getting-started/quickstart-python.md
+    - TypeScript Quickstart: getting-started/quickstart-typescript.md
+    - Choosing an SDK: getting-started/choosing-sdk.md
+  - Guides:
+    - guides/index.md
+    - Authentication:
+      - Browser Tokens: guides/authentication/browser-tokens.md
+      - Token Refresh: guides/authentication/token-refresh.md
+      - Pro API: guides/authentication/pro-api-auth.md
+    - Data Models:
+      - Players: guides/data-models/players.md
+      - Games: guides/data-models/games.md
+      - Statistics: guides/data-models/stats.md
+    - Streaming:
+      - Overlay Basics: guides/streaming/overlay-basics.md
+      - Real-Time Data: guides/streaming/real-time-data.md
+    - Advanced:
+      - Rate Limiting: guides/advanced/rate-limiting.md
+      - Caching: guides/advanced/caching.md
+      - Error Handling: guides/advanced/error-handling.md
+  - Examples:
+    - examples/index.md
+    - Player Stats: examples/fetch-player-stats.md
+    - Game Predictions: examples/game-predictions.md
+    - Fantasy Integration: examples/fantasy-integration.md
+  - API Reference:
+    - NFL API: api-reference/index.html
+    - Pro API: api-reference/pro.html
+  - SDK Reference:
+    - Python SDK: sdk-reference/python/index.html
+    - TypeScript SDK: sdk-reference/typescript/index.html
+  - Contributing:
+    - contributing/index.md
+    - Development Setup: contributing/development-setup.md
+    - Documentation: contributing/documentation.md
+  - FAQ: faq.md
+  - Changelog: changelog.md
 
-extra_css:
-  - assets/css/custom.css
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-org/griddy-docs
 
-extra_javascript:
-  - assets/js/custom.js
+  version:
+    provider: mike
