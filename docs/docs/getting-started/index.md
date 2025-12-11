@@ -74,12 +74,4 @@ Before you begin, ensure you have:
 
     Complete walkthrough for Python developers
 
--   [:octicons-code-16: __TypeScript Quickstart__](quickstart-typescript.md)
-
-    Complete walkthrough for TypeScript developers
-
--   [:octicons-question-16: __Choosing an SDK__](choosing-sdk.md)
-
-    Python vs TypeScript - which is right for you?
-
 </div>
