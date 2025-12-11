@@ -11,25 +11,10 @@ theme:
   custom_dir: overrides/
 
   palette:
-    # Light Mode - Electric Grid palette
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: deep purple
-      accent: cyan
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Dark Mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: deep purple
-      accent: cyan
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+    scheme: griddy
 
   font:
-    text: Inter
+    text: Space Grotesk
     code: Jetbrains Mono
 
   features:

@@ -1,5 +1,5 @@
 /* Griddy Electric Grid Color Palette */
-:root {
+[data-md-color-scheme="griddy"] {
   --md-primary-fg-color: #7C3AED;        /* Electric Purple */
   --md-primary-fg-color--light: #A78BFA;
   --md-primary-fg-color--dark: #5B21B6;
@@ -21,9 +21,10 @@
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
-  font-family: 'Space Grotesk', var(--md-text-font-family);
+    font-family: 'Space Grotesk', var(--md-text-font-family), serif;
   font-weight: 700;
 }
+
 
 /* Code blocks styling */
 .md-typeset code {
@@ -33,7 +34,7 @@
 
 /* mkdocstrings specific styling */
 .doc-heading {
-  font-family: 'Space Grotesk', var(--md-text-font-family);
+    font-family: 'Space Grotesk', var(--md-text-font-family), serif;
 }
 
 .doc-symbol-toc {
