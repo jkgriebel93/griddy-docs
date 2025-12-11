@@ -1,5 +1,7 @@
 /* Griddy Electric Grid Color Palette */
 [data-md-color-scheme="griddy"] {
+   --md-text-font: "Inter";
+  --md-code-font: "JetBrains Mono";
   --md-primary-fg-color: #7C3AED;        /* Electric Purple */
   --md-primary-fg-color--light: #A78BFA;
   --md-primary-fg-color--dark: #5B21B6;
@@ -21,13 +23,16 @@
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
-    font-family: 'Space Grotesk', var(--md-text-font-family), serif;
+  font-family: 'Space Grotesk', var(--md-text-font-family), sans-serif;
   font-weight: 700;
 }
 
 
 /* Code blocks styling */
-.md-typeset code {
+.md-typeset code,
+.md-typeset pre code,
+.md-typeset kbd {
+  font-family: var(--md-code-font), monospace;
   background-color: var(--griddy-purple-50);
   border-radius: 4px;
 }

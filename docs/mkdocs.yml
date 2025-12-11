@@ -13,9 +13,9 @@ theme:
   palette:
     scheme: griddy
 
-  font:
-    text: Space Grotesk
-    code: Jetbrains Mono
+  # font:
+  #   text: Space Grotesk
+  #   code: Jetbrains Mono
 
   features:
     - navigation.instant
