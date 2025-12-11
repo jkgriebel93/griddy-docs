@@ -1,6 +1,6 @@
 /* Griddy Electric Grid Color Palette */
 [data-md-color-scheme="griddy"] {
-   --md-text-font: "Inter";
+  --md-text-font: "Inter";
   --md-code-font: "JetBrains Mono";
   --md-primary-fg-color: #7C3AED;        /* Electric Purple */
   --md-primary-fg-color--light: #A78BFA;
