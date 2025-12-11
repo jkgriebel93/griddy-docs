@@ -32,9 +32,9 @@ Welcome to the complete documentation for Griddy, your NFL API SDK toolkit.
 
     ---
 
-    Auto-generated documentation for Python and TypeScript SDKs
+    Auto-generated documentation for the Python SDK
 
-    [:octicons-arrow-right-24: Python SDK](sdk-reference/python/index.html) · [:octicons-arrow-right-24: TypeScript SDK](sdk-reference/typescript/index.html)
+    [:octicons-arrow-right-24: Python SDK](sdk-reference/python/index.md)
 
 </div>
 

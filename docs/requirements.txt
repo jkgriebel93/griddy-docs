@@ -4,7 +4,7 @@ mkdocs-material>=9.4.0
 mkdocstrings[python]>=0.24.0
 griffe>=0.40.0
 
-mkdocs-gen-files>-0.5.0
+mkdocs-gen-files>=0.5.0
 mkdocs-literate-nav>=0.6.0
 
 mkdocs-minify-plugin>=0.7.0

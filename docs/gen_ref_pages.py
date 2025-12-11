@@ -123,9 +123,11 @@ for path in sorted(src.rglob("*.py")):
 
         # Add breadcrumb for nested modules
         if len(parts) > 1:
-            breadcrumb_parts = [f"[{PACKAGE_NAME}](../index.md)"]
+            breadcrumb_parts = []
             for i, part in enumerate(parts[:-1]):
-                rel_path = "../" * (len(parts) - i - 1) + "index.md"
+                # Calculate relative path from current file to this part's index.md
+                # e.g., from griddy/nfl/sdk.md: griddy->../index.md, nfl->index.md
+                rel_path = "../" * (len(parts) - i - 2) + "index.md"
                 breadcrumb_parts.append(f"[{part}]({rel_path})")
             breadcrumb_parts.append(f"**{parts[-1]}**")
             fd.write(f"*{' / '.join(breadcrumb_parts)}*\n\n")

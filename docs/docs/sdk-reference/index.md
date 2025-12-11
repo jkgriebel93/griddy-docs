@@ -12,15 +12,7 @@ Complete API reference documentation for Griddy SDKs, auto-generated from source
 
     Full-featured SDK with async support, type hints, and Pydantic models.
 
-    [:octicons-arrow-right-24: Python Reference](python/)
-
--   :fontawesome-brands-js:{ .lg .middle } __TypeScript SDK__
-
-    ---
-
-    Type-safe SDK for Node.js and browser environments.
-
-    [:octicons-arrow-right-24: TypeScript Reference](typescript/index.html)
+    [:octicons-arrow-right-24: Python Reference](python/index.md)
 
 </div>
 

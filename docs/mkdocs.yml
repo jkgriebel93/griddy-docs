@@ -10,8 +10,6 @@ theme:
   name: material
   custom_dir: overrides/
 
-
-
   palette:
     # Light Mode - Electric Grid palette
     - media: "(prefers-color-scheme: light)"
@@ -27,7 +25,7 @@ theme:
       primary: deep purple
       accent: cyan
       toggle:
-        icone: material/brightness-4
+        icon: material/brightness-4
         name: Switch to light mode
 
   font:
@@ -52,12 +50,11 @@ theme:
 
   icon:
     repo: fontawesome/brands/github
-
-  logo: assets/images/griddy-primary.svg
-  favicon: assets/images/griddy-icon-only.ico
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.svg
 
 extra_css:
-  - assets/css/custom.css
+  - stylesheets/extra.css
 
 markdown_extensions:
   - admonition
@@ -89,99 +86,104 @@ plugins:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
 
   # Auto generated docs for Python SDK
-  - gen-files:
-      scripts:
-        - gen_ref_pages.py
+  # - gen-files:
+  #     scripts:
+  #       - gen_ref_pages.py
 
-  - literate-nav:
-      nav_file: SUMMARY.md
+  # - literate-nav:
+  #     nav_file: SUMMARY.md
 
-  - mkdocstrings:
-      default_handler: python
-      handlers:
-        python:
-          paths:
-            - ../tmp/python-sdk/src
-          options:
-            docstring_style: google
-            docstring_options:
-              ignore_init_summary: false
-            docstring_section_style: spacy
+  # - mkdocstrings:
+  #     default_handler: python
+  #     handlers:
+  #       python:
+  #         paths:
+  #           - ../tmp/python-sdk/src
+  #         options:
+  #           docstring_style: google
+  #           docstring_options:
+  #             ignore_init_summary: false
+  #           docstring_section_style: spacy
+  #
+  #           show_root_heading: true
+  #           show_root_full_path: false
+  #           show_root_toc_entry: true
+  #           show_symbol_type_heading: true
+  #           show_symbol_type_toc: true
+  #           show_category_heading: true
+  #
+  #           members_order: source
+  #           group_by_category: true
+  #           show_submodules: false
+  #
+  #           show_signatures: true
+  #           show_signature_annotations: true
+  #           separate_signature: true
+  #           signature_crossrefs: true
+  #
+  #           show_source: true
+  #
+  #           show_bases: true
+  #           show_inheritance_diagram: true
+  #
+  #           merge_init_into_class: true
+  #
+  #           inherited_members: false
+  #           filters:
+  #             - "!^_"        # Exclude private members
+  #             - "^__init__$" # But include __init__
 
-            show_root_heading: true
-            show_root_full_path: false
-            show_root_toc_entry: true
-            show_symbol_type_heading: true
-            show_symbol_type_toc: true
-            show_category_heading: true
+  # - minify:
+  #     minify_html: true
 
-            members_order: source
-            group_by_category: true
-            show_submodules: false
-
-            show_signatures: true
-            show_signature_annotations: true
-            separate_signature: true
-            signature_crossrefs: true
-
-            show_source: true
-
-            show_bases: true
-            show_inheritance_diagram: true
-
-            merge_init_into_class: true
-
-            inherited_members: false
-            filters:
-              - "!^_"        # Exclude private members
-              - "^__init__$" # But include __init__
-
-  - minify:
-      minify_html: true
+validation:
+  nav:
+    omitted_files: ignore
 
 nav:
   - Home: index.md
-  - Getting Started:
-    - getting-started/index.md
-    - Installation: getting-started/installation.md
-    - Authentication: getting-started/authentication.md
-    - Python Quickstart: getting-started/quickstart-python.md
-    - TypeScript Quickstart: getting-started/quickstart-typescript.md
-    - Choosing an SDK: getting-started/choosing-sdk.md
-  - Guides:
-    - guides/index.md
-    - Authentication:
-      - Browser Tokens: guides/authentication/browser-tokens.md
-      - Token Refresh: guides/authentication/token-refresh.md
-      - Pro API: guides/authentication/pro-api-auth.md
-    - Data Models:
-      - Players: guides/data-models/players.md
-      - Games: guides/data-models/games.md
-      - Statistics: guides/data-models/stats.md
-    - Streaming:
-      - Overlay Basics: guides/streaming/overlay-basics.md
-      - Real-Time Data: guides/streaming/real-time-data.md
-    - Advanced:
-      - Rate Limiting: guides/advanced/rate-limiting.md
-      - Caching: guides/advanced/caching.md
-      - Error Handling: guides/advanced/error-handling.md
-  - Examples:
-    - examples/index.md
-    - Player Stats: examples/fetch-player-stats.md
-    - Game Predictions: examples/game-predictions.md
-    - Fantasy Integration: examples/fantasy-integration.md
-  - API Reference:
-    - NFL API: api-reference/index.html
-  - SDK Reference:
-    - sdk-reference/index.md
-    - Python SDK: sdk-reference/python/index.html
-    # - TypeScript SDK: sdk-reference/typescript/index.html
-  - Contributing:
-    - contributing/index.md
-    - Development Setup: contributing/development-setup.md
-    - Documentation: contributing/documentation.md
-  - FAQ: faq.md
-  - Changelog: changelog.md
+  # - Getting Started:
+  #   - getting-started/index.md
+  #   - Installation: getting-started/installation.md
+  #   - Authentication: getting-started/authentication.md
+  #   - Python Quickstart: getting-started/quickstart-python.md
+  #   # - TypeScript Quickstart: getting-started/quickstart-typescript.md  # Not yet implemented
+  #   # - Choosing an SDK: getting-started/choosing-sdk.md  # Not yet implemented
+  # - Guides:
+  #   - guides/index.md
+  #   - Authentication:
+  #     - Browser Tokens: guides/authentication/browser-tokens.md
+  #     - Token Refresh: guides/authentication/token-refresh.md
+  #     - Pro API: guides/authentication/pro-api-auth.md
+  #   - Data Models:
+  #     - Players: guides/data-models/players.md
+  #     - Games: guides/data-models/games.md
+  #     - Statistics: guides/data-models/stats.md
+  #   - Streaming:
+  #     - Overlay Basics: guides/streaming/overlay-basics.md
+  #     - Real-Time Data: guides/streaming/real-time-data.md
+  #   - Common Patterns:
+  #     - Rate Limiting: guides/common-patterns/rate-limiting.md
+  #     - Caching: guides/common-patterns/caching.md
+  #     - Error Handling: guides/common-patterns/error-handling.md
+  # - Examples:
+  #   - examples/index.md
+  #   - Python:
+  #     - Player Stats: examples/python/fetch-player-stats.md
+  #     - Game Predictions: examples/python/game-predictions.md
+  #     - Fantasy Integration: examples/python/fantasy-integration.md
+  # - API Reference:
+  #   - NFL API: api-reference/index.html
+  # - SDK Reference:
+  #   - sdk-reference/index.md
+  #   # Python SDK reference is auto-generated by gen_ref_pages.py
+  #   # - TypeScript SDK: sdk-reference/typescript/index.html  # Not yet implemented
+  # - Contributing:
+  #   - contributing/index.md
+  #   - SDK Development: contributing/sdk-development.md
+  #   - Documentation: contributing/documentation.md
+  # - FAQ: faq.md
+  # - Changelog: changelog.md
 
 extra:
   social:
