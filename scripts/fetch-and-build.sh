@@ -28,6 +28,11 @@ git clone --depth 1 --single-branch "https://github.com/${PYTHON_SDK_REPO}.git" 
 
 echo "   ✓ SDK repositories cloned"
 
+# Step 2.5 Install pipx, poetry
+sudo apt install -y pipx
+pipx install poetry
+
+
 # Step 3: Install Python SDK so mkdocstrings can access it.
 echo ""
 echo "Step 3/5: Building Python SDK documentation..."
