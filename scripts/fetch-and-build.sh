@@ -38,7 +38,7 @@ echo ""
 echo "Step 3/5: Building Python SDK documentation..."
 cd "$ROOT_DIR/tmp/python-sdk"
 poetry install --all-groups
-poetry shell
+eval $(poetry env activate)
 echo "Python SDK installed."
 
 # Step 4: Build TypeScript SDK documentation
