@@ -97,7 +97,7 @@ plugins:
             group_by_category: true
             show_submodules: false
 
-            show_signatures: true
+            show_signature: true
             show_signature_annotations: true
             separate_signature: true
             signature_crossrefs: true
