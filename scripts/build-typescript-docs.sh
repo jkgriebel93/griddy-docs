@@ -1,7 +1,6 @@
 echo "Working on TypeScript documentation..."
 
 cd "$TYPESCRIPT_SDK_REPO"
-git checkout tsc-sdk-1
 npm ci
 
 TS_CONFIG="$ROOT_DIR/config/typedoc/tsconfig.json"
