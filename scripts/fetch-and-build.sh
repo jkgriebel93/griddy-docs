@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 
 echo "╔══════════════════════════════════════════════════════════╗"
 echo "║          Griddy Documentation Build Pipeline             ║"
