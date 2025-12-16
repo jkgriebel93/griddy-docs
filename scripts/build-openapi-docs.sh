@@ -16,7 +16,7 @@ if [ -f "$SPECS_DIR/nfl-com-api.yaml" ]; then
     "$SPECS_DIR/nfl-com-api.yaml" \
     --config "$ROOT_DIR/config/redocly/redocly.yaml" \
     -o "$OUTPUT_DIR/index.html"
-  echo "   ✓ NFL API reference built"
+  echo "NFL API reference built"
 fi
 
 echo "OpenAPI docs built successfully"

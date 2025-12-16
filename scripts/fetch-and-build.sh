@@ -10,48 +10,39 @@ echo "╚═══════════════════════�
 # Configuration - customize these for your repos
 OPENAPI_REPO="jkgriebel93/griddy-docs"
 PYTHON_SDK_REPO="jkgriebel93/griddy-sdk-python"
-# TYPESCRIPT_SDK_REPO="jkgriebel93/griddy-sdk-typescript"
+TYPESCRIPT_SDK_REPO="jkgriebel93/griddy-sdk-typescript"
 
 # Clean previous build artifacts
-echo ""
+echo "Step 1: Clean up to ensure fresh environment"
 echo "Cleaning previous build artifacts..."
 rm -rf "$ROOT_DIR/tmp/python-sdk"
-# rm -rf "$ROOT_DIR/tmp/typescript-sdk"
+rm -rf "$ROOT_DIR/tmp/typescript-sdk"
 rm -rf "$ROOT_DIR/docs/site"
 mkdir -p "$ROOT_DIR/tmp"
 
-# Step 1: Clone SDK repositories
-echo ""
-echo "Step 2/5: Cloning SDK repositories..."
-git clone --depth 1 --single-branch "https://github.com/${PYTHON_SDK_REPO}.git" "$ROOT_DIR/tmp/python-sdk"
-# git clone --depth 1 --single-branch "https://github.com/${TYPESCRIPT_SDK_REPO}.git" "$ROOT_DIR/tmp/typescript-sdk"
-
-echo "   ✓ SDK repositories cloned"
-
-# Step 2.5 Install pipx, poetry
+echo "Step 2: Install system deps, clone repos"
+echo "Install pipx -> poetry"
 sudo apt install -y pipx
 pipx install poetry
 
+git clone --depth 1 --single-branch "https://github.com/${PYTHON_SDK_REPO}.git" "$ROOT_DIR/tmp/python-sdk"
+git clone --depth 1 --single-branch "https://github.com/${TYPESCRIPT_SDK_REPO}.git" "$ROOT_DIR/tmp/typescript-sdk"
+echo "SDK repositories cloned"
 
-# Step 3: Install Python SDK so mkdocstrings can access it.
-echo ""
-echo "Step 3/5: Building Python SDK documentation..."
-cd "$ROOT_DIR/tmp/python-sdk"
+echo "Step 3: Build TypeScript SDK documentation"
+bash "$SCRIPT_DIR/build-typescript-docs.sh"
+echo "TypeScript SDK docs built"
+
+
+echo "Step 4: Building Python SDK documentation..."
+cd "$PYTHON_SDK_REPO"
 poetry install --all-groups
 eval $(poetry env activate)
 echo "Python SDK installed."
+cd "$ROOT_DIR"
 
-# Step 4: Build TypeScript SDK documentation
-# echo ""
-# echo "Step 4/5: Building TypeScript SDK documentation..."
-# bash "$SCRIPT_DIR/build-typescript-docs.sh"
-# echo "   ✓ TypeScript SDK docs built"
-
-# Step 5: Build OpenAPI documentation
-echo ""
-echo "Step 5/5: Building OpenAPI documentation..."
+echo "Step 5: Building OpenAPI documentation..."
 bash "$SCRIPT_DIR/build-openapi-docs.sh"
-echo "   ✓ OpenAPI docs built"
 
 # Step 6: Build final MkDocs site
 echo ""

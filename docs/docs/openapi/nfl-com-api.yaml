@@ -15421,7 +15421,7 @@ paths:
         individual player statistics, and scoring summary. Returns empty arrays for future games.
 
         '
-      operationId: getBoxscore
+      operationId: getProBoxscore
       parameters:
       - description: Game identifier (10-digit format YYYYMMDDNN)
         in: query
