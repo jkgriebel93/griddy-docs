@@ -56,6 +56,7 @@ poetry show mkdocs
 echo ""
 echo "Building MkDocs site..."
 cd "$ROOT_DIR/docs"
+which mkdocs
 mkdocs build --strict
 
 echo ""
