@@ -12,8 +12,8 @@ OPENAPI_REPO="jkgriebel93/griddy-docs"
 PYTHON_SDK_REPO="jkgriebel93/griddy-sdk-python"
 TYPESCRIPT_SDK_REPO="jkgriebel93/griddy-sdk-typescript"
 
-PYTHON_SDK_DIR="$ROOT_DIR/tmp/python-sdk"
-TYPESCRIPT_SDK_DIR="$ROOT_DIR/tmp/typescript-sdk"
+export PYTHON_SDK_DIR="$ROOT_DIR/tmp/python-sdk"
+export TYPESCRIPT_SDK_DIR="$ROOT_DIR/tmp/typescript-sdk"
 
 # Clean previous build artifacts
 echo "Step 1: Clean up to ensure fresh environment"
