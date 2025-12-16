@@ -2,6 +2,7 @@
 
 export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+export SPECS_DIR="$ROOT_DIR/tmp/openapi-specs"
 
 echo "╔══════════════════════════════════════════════════════════╗"
 echo "║          Griddy Documentation Build Pipeline             ║"
@@ -47,6 +48,9 @@ cd "$ROOT_DIR"
 
 echo "Step 5: Building OpenAPI documentation..."
 bash "$SCRIPT_DIR/build-openapi-docs.sh"
+cd "$ROOT_DIR"
+which python
+poetry show mkdocs
 
 # Step 6: Build final MkDocs site
 echo ""
