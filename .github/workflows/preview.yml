@@ -29,7 +29,7 @@ jobs:
         run: chmod +x scripts/*.sh
 
       - name: Build documentation
-        run: bash scripts/fetch-and-build.sh
+        run: bash scripts/fetch-and-build.sh ${{ github.workspace }}
 
       - name: Upload preview artifact
         uses: actions/upload-artifact@v4

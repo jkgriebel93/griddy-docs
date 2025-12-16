@@ -2,7 +2,9 @@
 
 set -e
 export ROOT_DIR=$1
-export SCRIPT_DIR="$ROOT_DIR/scrips"
+echo "ROOT_DIR: $ROOT_DIR"
+
+export SCRIPT_DIR="$ROOT_DIR/scripts"
 export SPEC_PATH="$ROOT_DIR/docs/docs/openapi/nfl-com-api.yaml"
 
 export PYTHON_SDK_REPO="jkgriebel93/griddy-sdk-python"
@@ -16,7 +18,6 @@ export TYPESCRIPT_DOCS_OUT="$ROOT_DIR/docs/docs/sdk-reference/typescript"
 export OPENAPI_DOCS_OUT="$ROOT_DIR/docs/docs/api-reference"
 
 echo "SCRIPT_DIR: $SCRIPT_DIR"
-echo "ROOT_DIR: $ROOT_DIR"
 echo "SPECS_PATH $SPEC_PATH"
 echo "PYTHON_SDK_DIR: $PYTHON_SDK_DIR"
 echo "TYPESCRIPT_SDK_DIR: $TYPESCRIPT_SDK_DIR"
