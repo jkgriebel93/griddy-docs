@@ -49,14 +49,13 @@ cd "$ROOT_DIR"
 echo "Step 5: Building OpenAPI documentation..."
 bash "$SCRIPT_DIR/build-openapi-docs.sh"
 cd "$ROOT_DIR"
-which python
-poetry show mkdocs
+
+pwd
+tree .
 
 # Step 6: Build final MkDocs site
-echo ""
 echo "Building MkDocs site..."
 cd "$ROOT_DIR/docs"
-which mkdocs
 mkdocs build --strict
 
 echo ""

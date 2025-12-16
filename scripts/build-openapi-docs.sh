@@ -2,7 +2,7 @@
 
 OUTPUT_DIR="$ROOT_DIR/docs/docs/api-reference"
 
-echo "Building OpenAPI documentation..."
+echo "Building OpenAPI documentation in $OUTPUT_DIR"
 
 # Create output directory
 mkdir -p "$OUTPUT_DIR"
