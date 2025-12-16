@@ -1,6 +1,5 @@
 echo "Working on TypeScript documentation..."
 
-echo "$TYPESCRIPT_SDK_DIR"
 cd "$TYPESCRIPT_SDK_DIR"
 ls -lah
 npm ci

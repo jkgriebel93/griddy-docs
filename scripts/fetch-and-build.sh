@@ -1,20 +1,32 @@
 #!/bin/bash
 
-export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-export SPECS_DIR="$ROOT_DIR/tmp/openapi-specs"
+set -e
+export ROOT_DIR=$1
+export SCRIPT_DIR="$ROOT_DIR/scrips"
+export SPEC_PATH="$ROOT_DIR/docs/docs/openapi/nfl-com-api.yaml"
+
+export PYTHON_SDK_REPO="jkgriebel93/griddy-sdk-python"
+export TYPESCRIPT_SDK_REPO="jkgriebel93/griddy-sdk-typescript"
+
+export PYTHON_SDK_DIR="$ROOT_DIR/tmp/python-sdk"
+export TYPESCRIPT_SDK_DIR="$ROOT_DIR/tmp/typescript-sdk"
+
+export PYTHON_DOCS_OUT="$ROOT_DIR/docs/docs/sdk-reference/python"
+export TYPESCRIPT_DOCS_OUT="$ROOT_DIR/docs/docs/sdk-reference/typescript"
+export OPENAPI_DOCS_OUT="$ROOT_DIR/docs/docs/api-reference"
+
+echo "SCRIPT_DIR: $SCRIPT_DIR"
+echo "ROOT_DIR: $ROOT_DIR"
+echo "SPECS_PATH $SPEC_PATH"
+echo "PYTHON_SDK_DIR: $PYTHON_SDK_DIR"
+echo "TYPESCRIPT_SDK_DIR: $TYPESCRIPT_SDK_DIR"
+echo "PYTHON_DOCS_OUT: $PYTHON_DOCS_OUT"
+echo "TYPESCRIPT_DOCS_OUT: $TYPESCRIPT_DOCS_OUT"
+echo "OPENAPI_DOCS_OUT: $OPENAPI_DOCS_OUT"
 
 echo "╔══════════════════════════════════════════════════════════╗"
 echo "║          Griddy Documentation Build Pipeline             ║"
 echo "╚══════════════════════════════════════════════════════════╝"
-
-# Configuration - customize these for your repos
-OPENAPI_REPO="jkgriebel93/griddy-docs"
-PYTHON_SDK_REPO="jkgriebel93/griddy-sdk-python"
-TYPESCRIPT_SDK_REPO="jkgriebel93/griddy-sdk-typescript"
-
-export PYTHON_SDK_DIR="$ROOT_DIR/tmp/python-sdk"
-export TYPESCRIPT_SDK_DIR="$ROOT_DIR/tmp/typescript-sdk"
 
 # Clean previous build artifacts
 echo "Step 1: Clean up to ensure fresh environment"
@@ -29,15 +41,15 @@ echo "Install pipx -> poetry"
 sudo apt install -y pipx
 pipx install poetry
 
-git clone --depth 1 --single-branch "https://github.com/${PYTHON_SDK_REPO}.git" "$ROOT_DIR/tmp/python-sdk"
-git clone --depth 1 --single-branch "https://github.com/${TYPESCRIPT_SDK_REPO}.git" "$ROOT_DIR/tmp/typescript-sdk"
+git clone "https://github.com/${PYTHON_SDK_REPO}.git" "$PYTHON_SDK_DIR"
+git clone "https://github.com/${TYPESCRIPT_SDK_REPO}.git" "$TYPESCRIPT_SDK_DIR"
 echo "SDK repositories cloned"
 
-echo "$TYPESCRIPT_SDK_DIR"
+ls -lah "$TYPESCRIPT_SDK_DIR"
+
 echo "Step 3: Build TypeScript SDK documentation"
 bash "$SCRIPT_DIR/build-typescript-docs.sh"
 echo "TypeScript SDK docs built"
-
 
 echo "Step 4: Building Python SDK documentation..."
 cd "$PYTHON_SDK_DIR"
@@ -51,7 +63,8 @@ bash "$SCRIPT_DIR/build-openapi-docs.sh"
 cd "$ROOT_DIR"
 
 pwd
-tree .
+ls -lah
+# tree .
 
 # Step 6: Build final MkDocs site
 echo "Building MkDocs site..."
