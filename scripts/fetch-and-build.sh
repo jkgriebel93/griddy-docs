@@ -32,6 +32,7 @@ git clone --depth 1 --single-branch "https://github.com/${PYTHON_SDK_REPO}.git" 
 git clone --depth 1 --single-branch "https://github.com/${TYPESCRIPT_SDK_REPO}.git" "$ROOT_DIR/tmp/typescript-sdk"
 echo "SDK repositories cloned"
 
+echo "$TYPESCRIPT_SDK_DIR"
 echo "Step 3: Build TypeScript SDK documentation"
 bash "$SCRIPT_DIR/build-typescript-docs.sh"
 echo "TypeScript SDK docs built"
