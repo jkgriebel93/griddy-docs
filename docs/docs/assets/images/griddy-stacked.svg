@@ -1,0 +1,25 @@
+<svg id="logo7" width="280" height="320" viewBox="0 0 280 320" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Icon at top (larger) -->
+                    <g transform="translate(90, 40)">
+                        <circle cx="0" cy="0" r="10" fill="none" stroke="#7C3AED" stroke-width="3"/>
+                        <circle cx="30" cy="0" r="10" fill="none" stroke="#7C3AED" stroke-width="3"/>
+                        <circle cx="60" cy="0" r="10" fill="none" stroke="#7C3AED" stroke-width="3"/>
+                        <circle cx="15" cy="30" r="10" fill="none" stroke="#7C3AED" stroke-width="3"/>
+                        <circle cx="45" cy="30" r="10" fill="none" stroke="#7C3AED" stroke-width="3"/>
+                        
+                        <circle cx="30" cy="0" r="16" fill="none" stroke="#F59E0B" stroke-width="4"/>
+                        <circle cx="30" cy="0" r="7" fill="#F59E0B"/>
+                        
+                        <line x1="30" y1="0" x2="30" y2="-30" stroke="#06B6D4" stroke-width="3" stroke-dasharray="4,4" opacity="0.6"/>
+                        <line x1="30" y1="0" x2="65" y2="-20" stroke="#06B6D4" stroke-width="3" stroke-dasharray="4,4" opacity="0.6"/>
+                        <line x1="30" y1="0" x2="65" y2="20" stroke="#06B6D4" stroke-width="3" stroke-dasharray="4,4" opacity="0.6"/>
+                        
+                        <circle cx="30" cy="-30" r="4" fill="#06B6D4"/>
+                        <circle cx="65" cy="-20" r="4" fill="#06B6D4"/>
+                        <circle cx="65" cy="20" r="4" fill="#06B6D4"/>
+                    </g>
+                    
+                    <!-- Text below -->
+                    <text x="140" y="200" font-family="'Space Grotesk', sans-serif" font-size="64" font-weight="700" fill="#111827" text-anchor="middle">GRIDDY</text>
+                    <text x="140" y="235" font-family="'Inter', sans-serif" font-size="20" font-weight="500" fill="#6B7280" text-anchor="middle">Football Analytics</text>
+                </svg>

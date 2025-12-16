@@ -36,6 +36,12 @@ Welcome to the complete documentation for Griddy, your NFL API SDK toolkit.
 
     [:octicons-arrow-right-24: Python SDK](sdk-reference/python/index.md)
 
+    ---
+
+    Auto-generated documentation for the TypeScript SDK
+
+    [:octicons-arrow-right-24: TypeScript SDK](sdk-reference/typescript/index.md)
+
 </div>
 
 ## Quick Install
@@ -44,6 +50,7 @@ Welcome to the complete documentation for Griddy, your NFL API SDK toolkit.
 ```bash
     pip install griddy-nfl
 ```
+
 
 === "TypeScript"
 ```bash
