@@ -12,11 +12,14 @@ OPENAPI_REPO="jkgriebel93/griddy-docs"
 PYTHON_SDK_REPO="jkgriebel93/griddy-sdk-python"
 TYPESCRIPT_SDK_REPO="jkgriebel93/griddy-sdk-typescript"
 
+PYTHON_SDK_DIR="$ROOT_DIR/tmp/python-sdk"
+TYPESCRIPT_SDK_DIR="$ROOT_DIR/tmp/typescript-sdk"
+
 # Clean previous build artifacts
 echo "Step 1: Clean up to ensure fresh environment"
 echo "Cleaning previous build artifacts..."
-rm -rf "$ROOT_DIR/tmp/python-sdk"
-rm -rf "$ROOT_DIR/tmp/typescript-sdk"
+rm -rf "$PYTHON_SDK_DIR"
+rm -rf "$TYPESCRIPT_SDK_DIR"
 rm -rf "$ROOT_DIR/docs/site"
 mkdir -p "$ROOT_DIR/tmp"
 
@@ -35,7 +38,7 @@ echo "TypeScript SDK docs built"
 
 
 echo "Step 4: Building Python SDK documentation..."
-cd "$PYTHON_SDK_REPO"
+cd "$PYTHON_SDK_DIR"
 poetry install --all-groups
 eval $(poetry env activate)
 echo "Python SDK installed."
