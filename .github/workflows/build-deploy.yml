@@ -11,7 +11,7 @@ on:
         type: boolean
         default: false
   repository_dispatch:
-    types: [sdk-updated, openapi-updated]
+    types: [sdk-updated, api-specs-updated]
 
 permissions:
   contents: read
