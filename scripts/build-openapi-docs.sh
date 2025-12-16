@@ -10,7 +10,7 @@ mkdir -p "$OUTPUT_DIR"
 # Build main NFL API docs
 if [ -f "$SPECS_DIR/nfl-com-api.yaml" ]; then
   npx @redocly/cli build-docs \
-    "$SPECS_DIR/nfl-com-api.yaml" \
+    "$ROOT_DIR/docs/docs/openapi/nfl-com-api.yaml" \
     --config "$ROOT_DIR/config/redocly/redocly.yaml" \
     -o "$OUTPUT_DIR/index.html"
   echo "NFL API reference built"
