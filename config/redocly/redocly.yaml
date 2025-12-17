@@ -8,7 +8,7 @@ logo:
 apis:
   nfl@v1:
     root: ./api-specs/nfl-com-api.yaml
-    output: ./api-reference/nfl-bundled.yaml
+    output: ./api-reference/nfl-com-api.yaml
 
 openapi:
   generateCodeSamples:

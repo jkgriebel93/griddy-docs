@@ -5,7 +5,7 @@ export ROOT_DIR=$1
 echo "ROOT_DIR: $ROOT_DIR"
 
 export SCRIPT_DIR="$ROOT_DIR/scripts"
-export SPEC_PATH="$ROOT_DIR/docs/docs/openapi/nfl-com-api.yaml"
+export SPEC_PATH="$ROOT_DIR/docs/docs/api-specs/nfl-com-api.yaml"
 
 export PYTHON_SDK_REPO="jkgriebel93/griddy-sdk-python"
 export TYPESCRIPT_SDK_REPO="jkgriebel93/griddy-sdk-typescript"

@@ -6,74 +6,45 @@ repo_name: jkgriebel93/griddy-docs
 repo_url: https://github.com/jkgriebel93/griddy-docs
 edit_uri: edit/main/docs/docs/
 
+
+
 theme:
   name: material
-  custom_dir: overrides/
+  custom_dir: overrides
+
+  logo: assets/images/griddy-primary.svg
+  favicon: assets/images/griddy-icon-only.svg
+
+  icon:
+    repo: fontawesome/brands/github
 
   palette:
     scheme: griddy
 
   features:
     - navigation.instant
+    - navigation.instant.preview
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
+    - navigation.path
     - navigation.indexes
     - toc.follow
     - toc.integrate
+    - navigation.top
     - search.suggest
     - search.highlight
-    - content.tabs.link
-    - content.code.copy
-    - content.code.annotate
-
-  icon:
-    repo: fontawesome/brands/github
-  logo: assets/images/logo.svg
-  favicon: assets/images/favicon.svg
-
-extra_css:
-  - stylesheets/extra.css
-
-markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - attr_list
-  - md_in_html
-  - tables
-  - toc:
-      permalink: true
+    - search.share
 
 plugins:
-  - search:
-      lang: en
-      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
-
-  # Auto generated docs for Python SDK
+  - search
   - gen-files:
       scripts:
         - gen_ref_pages.py
-
   - literate-nav:
       nav_file: SUMMARY.md
-
   - mkdocstrings:
       default_handler: python
       handlers:
@@ -85,41 +56,24 @@ plugins:
             docstring_options:
               ignore_init_summary: false
             docstring_section_style: spacy
-
             show_root_heading: true
             show_root_full_path: false
             show_root_toc_entry: true
             show_symbol_type_heading: true
             show_symbol_type_toc: true
             show_category_heading: true
-
             members_order: source
             group_by_category: true
             show_submodules: false
-
             show_signature: true
             show_signature_annotations: true
             separate_signature: true
             signature_crossrefs: true
-
             show_source: true
-
             show_bases: true
             show_inheritance_diagram: true
-
             merge_init_into_class: true
-
             inherited_members: false
-            filters:
-              - "!^_"        # Exclude private members
-              - "^__init__$" # But include __init__
-
-  - minify:
-      minify_html: true
-
-validation:
-  nav:
-    omitted_files: ignore
 
 nav:
   - Home: index.md
@@ -128,8 +82,8 @@ nav:
     - Installation: getting-started/installation.md
     - Authentication: getting-started/authentication.md
     - Python Quickstart: getting-started/quickstart-python.md
-    # - TypeScript Quickstart: getting-started/quickstart-typescript.md  # Not yet implemented
-    # - Choosing an SDK: getting-started/choosing-sdk.md  # Not yet implemented
+    - TypeScript Quickstart: getting-started/quickstart-typescript.md
+    - Choosing an SDK: getting-started/choosing-sdk.md
   - Guides:
     - guides/index.md
     - Authentication:
@@ -140,6 +94,7 @@ nav:
       - Players: guides/data-models/players.md
       - Games: guides/data-models/games.md
       - Statistics: guides/data-models/stats.md
+      - Schedules: guides/data-models/schedules.md
     - Streaming:
       - Overlay Basics: guides/streaming/overlay-basics.md
       - Real-Time Data: guides/streaming/real-time-data.md
@@ -147,29 +102,72 @@ nav:
       - Rate Limiting: guides/common-patterns/rate-limiting.md
       - Caching: guides/common-patterns/caching.md
       - Error Handling: guides/common-patterns/error-handling.md
+      - Pagination: guides/common-patterns/pagination.md
   - Examples:
     - examples/index.md
     - Python:
+      - Basic Usage: examples/python/basic-usage.md
+      - Async Patterns: examples/python/async-patterns.md
+      - Testing Strategies: examples/python/testing-strategies.md
       - Player Stats: examples/python/fetch-player-stats.md
       - Game Predictions: examples/python/game-predictions.md
       - Fantasy Integration: examples/python/fantasy-integration.md
+  - Tutorials:
+      - tutorials/index.md
+      - First API Call: tutorials/first-api-call.md
+      - Game Stats Dashboard: tutorials/game-stats-dashboard.md
+      - Live Score Tracker: tutorials/live-score-tracker.md
+      - Player Comparison: tutorials/player-comparison.md
   - API Reference:
     - NFL API: api-reference/index.html
   - SDK Reference:
     - sdk-reference/index.md
-    # Python SDK reference is auto-generated by gen_ref_pages.py
-    # - TypeScript SDK: sdk-reference/typescript/index.html  # Not yet implemented
+    - Python SDK: sdk-reference/python/index.md
+    - TypeScript SDK: sdk-reference/typescript/index.html
   - Contributing:
     - contributing/index.md
+    - Code of Conduct: contributing/code-of-conduct.md
+    - Testing: contributing/testing.md
     - SDK Development: contributing/sdk-development.md
     - Documentation: contributing/documentation.md
   - FAQ: faq.md
+  - About: about.md
   - Changelog: changelog.md
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+
+# validation:
+#   nav:
+#     omitted_files: ignore
+#
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/your-org/griddy-docs
-
-  version:
-    provider: mike
+      link: https://github.com/jkgriebel93/griddy-docs
+#
+#   version:
+#     provider: mike
