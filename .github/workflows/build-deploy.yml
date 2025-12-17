@@ -47,7 +47,7 @@ jobs:
         run: chmod +x scripts/*.sh
 
       - name: Fetch and build all documentation
-        run: bash scripts/fetch-and-build.sh
+        run: bash scripts/fetch-and-build.sh ${{ github.workspace }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
