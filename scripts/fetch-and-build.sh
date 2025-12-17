@@ -63,10 +63,6 @@ echo "Step 5: Building OpenAPI documentation..."
 bash "$SCRIPT_DIR/build-openapi-docs.sh"
 cd "$ROOT_DIR"
 
-pwd
-ls -lah
-# tree .
-
 # Step 6: Build final MkDocs site
 echo "Building MkDocs site..."
 cd "$ROOT_DIR/docs"
