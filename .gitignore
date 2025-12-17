@@ -1,6 +1,7 @@
 # Build outputs (regenerated on each build)
 docs/docs/api-reference/*.html
 docs/docs/sdk-reference/typescript
+docs/docs/sdk-reference/python
 docs/site/
 
 # Temporary build artifacts

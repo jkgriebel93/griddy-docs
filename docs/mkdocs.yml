@@ -122,7 +122,7 @@ nav:
     - NFL API: api-reference/index.html
   - SDK Reference:
     - sdk-reference/index.md
-    - Python SDK: sdk-reference/python/index.md
+    - Python SDK: sdk-reference/python/
     - TypeScript SDK: sdk-reference/typescript/index.html
   - Contributing:
     - contributing/index.md
