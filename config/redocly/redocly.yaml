@@ -1,4 +1,5 @@
 # Redocly Configuration for NFL API Documentation
+# Theme matches MkDocs Material with Griddy color palette from docs/docs/stylesheets/extra.css
 extends:
   - recommended
 
@@ -22,36 +23,112 @@ openapi:
       - lang: "Node.js"
         label: "Node.js"
 
-
-  theme:
-    colors:
-      primary:
-        main: '#7C3AED'
-      success:
-        main: '#06B6D4'
-      warning:
-        main: '#F59E0B'
-
-    typography:
-      fontSize: '15px'
-      fontFamily: 'Inter, sans-serif'
-      headings:
-        fontFamily: 'Space Grotesk, sans-serif'
-      code:
-        fontFamily: 'JetBrains Mono, monospace'
-
-    sidebar:
-      backgroundColor: '#F5F3FF'
-      textColor: '#4C1D95'
-
-    rightPanel:
-      backgroundColor: '#1E1B4B'
-
   hideDownloadButton: false
   disableSearch: false
   expandResponses: '200,201'
   jsonSampleExpandLevel: 2
-    
+
+  theme:
+    colors:
+      primary:
+        main: '#7C3AED'           # Electric Purple (--md-primary-fg-color)
+        light: '#A78BFA'          # (--md-primary-fg-color--light)
+        dark: '#5B21B6'           # (--md-primary-fg-color--dark)
+        contrastText: '#FFFFFF'
+      success:
+        main: '#06B6D4'           # Cyan accent (--md-accent-fg-color)
+        light: '#67E8F9'
+        dark: '#0891B2'
+        contrastText: '#FFFFFF'
+      warning:
+        main: '#F59E0B'           # Griddy amber (--griddy-amber)
+        light: '#FCD34D'
+        dark: '#D97706'
+        contrastText: '#000000'
+      error:
+        main: '#EF4444'
+        light: '#FCA5A5'
+        dark: '#DC2626'
+        contrastText: '#FFFFFF'
+      text:
+        primary: '#1F2937'        # Dark gray for body text
+        secondary: '#4C1D95'      # (--griddy-purple-900)
+      border:
+        dark: '#5B21B6'
+        light: '#EDE9FE'          # (--griddy-purple-100)
+      responses:
+        success:
+          color: '#06B6D4'
+          backgroundColor: 'rgba(6, 182, 212, 0.1)'
+        error:
+          color: '#EF4444'
+          backgroundColor: 'rgba(239, 68, 68, 0.1)'
+        redirect:
+          color: '#F59E0B'
+          backgroundColor: 'rgba(245, 158, 11, 0.1)'
+        info:
+          color: '#7C3AED'
+          backgroundColor: 'rgba(124, 58, 237, 0.1)'
+      http:
+        get: '#06B6D4'            # Cyan for GET
+        post: '#10B981'           # Green for POST
+        put: '#F59E0B'            # Amber for PUT
+        patch: '#8B5CF6'          # Purple variant for PATCH
+        delete: '#EF4444'         # Red for DELETE
+        basic: '#6B7280'
+        link: '#7C3AED'
+        head: '#A78BFA'
+        options: '#6B7280'
+
+    typography:
+      fontSize: '15px'
+      lineHeight: '1.6'
+      fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+      fontWeightRegular: '400'
+      fontWeightBold: '600'
+      fontWeightLight: '300'
+
+      headings:
+        fontFamily: 'Space Grotesk, Inter, sans-serif'
+        fontWeight: '700'
+
+      code:
+        fontSize: '14px'
+        fontFamily: 'JetBrains Mono, SFMono-Regular, Consolas, monospace'
+        fontWeight: '400'
+        lineHeight: '1.5'
+        backgroundColor: '#F5F3FF'  # (--griddy-purple-50)
+        color: '#5B21B6'
+        wrap: true
+
+      links:
+        color: '#7C3AED'
+        visited: '#5B21B6'
+        hover: '#A78BFA'
+
+    sidebar:
+      backgroundColor: '#F5F3FF'    # (--griddy-purple-50)
+      textColor: '#4C1D95'          # (--griddy-purple-900)
+      activeTextColor: '#7C3AED'
+      width: '260px'
+      groupItems:
+        textTransform: 'uppercase'
+        fontWeight: '600'
+      level1items:
+        textTransform: 'none'
+
+    rightPanel:
+      backgroundColor: '#1E1B4B'    # Deep indigo for code panel
+      textColor: '#E5E7EB'
+      width: '40%'
+
+    codeBlock:
+      backgroundColor: '#1E1B4B'
+
+    logo:
+      maxHeight: '50px'
+      maxWidth: '200px'
+
 rules:
   no-unused-components: warn
   no-unresolved-refs: error
