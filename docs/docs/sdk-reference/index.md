@@ -8,7 +8,7 @@ Complete API documentation for the Griddy SDKs.
 
 Full Python API documentation with all classes, methods, and parameters.
 
-[:octicons-arrow-right-24: Python SDK Reference](python/)
+[:octicons-arrow-right-24: Python SDK Reference](python/griddy/index.html)
 
 **Version:** 0.7.4
 **Python:** 3.14+
