@@ -20,14 +20,16 @@ jobs:
           cache: 'pip'
           cache-dependency-path: docs/requirements.txt
 
-      - name: Install dependencies
-        run: pip install -r docs/requirements.txt
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
 
       - name: Make scripts executable
         run: chmod +x scripts/*.sh
 
       - name: Build documentation
-        run: bash scripts/fetch-and-build.sh
+        run: bash scripts/fetch-and-build.sh ${{ github.workspace }}
 
       - name: Upload preview artifact
         uses: actions/upload-artifact@v4

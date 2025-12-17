@@ -2,45 +2,55 @@
 extends:
   - recommended
 
-theme:
-  openapi:
-    generateCodeSamples:
-      languages:
-        - lang: python
-          label: Python
-        - lang: javascript
-          label: JavaScript
-        - lang: curl
-          label: cURL
-    
-    theme:
-      colors:
-        primary:
-          main: '#7C3AED'
-        success:
-          main: '#06B6D4'
-        warning:
-          main: '#F59E0B'
-      
-      typography:
-        fontSize: '15px'
-        fontFamily: 'Inter, sans-serif'
-        headings:
-          fontFamily: 'Space Grotesk, sans-serif'
-        code:
-          fontFamily: 'JetBrains Mono, monospace'
-      
-      sidebar:
-        backgroundColor: '#F5F3FF'
-        textColor: '#4C1D95'
-      
-      rightPanel:
-        backgroundColor: '#1E1B4B'
+logo:
+  image: ./assets/images/griddy-icon-only.svg
 
-    hideDownloadButton: false
-    disableSearch: false
-    expandResponses: '200,201'
-    jsonSampleExpandLevel: 2
+apis:
+  nfl@v1:
+    root: ./api-specs/nfl-com-api.yaml
+    output: ./api-reference/nfl-com-api.yaml
+
+openapi:
+  generateCodeSamples:
+    languages:
+      - lang: curl
+        label: cURL
+      - lang: Python
+        label: Python
+      - lang: JavaScript
+        label: JS
+      - lang: "Node.js"
+        label: "Node.js"
+
+
+  theme:
+    colors:
+      primary:
+        main: '#7C3AED'
+      success:
+        main: '#06B6D4'
+      warning:
+        main: '#F59E0B'
+
+    typography:
+      fontSize: '15px'
+      fontFamily: 'Inter, sans-serif'
+      headings:
+        fontFamily: 'Space Grotesk, sans-serif'
+      code:
+        fontFamily: 'JetBrains Mono, monospace'
+
+    sidebar:
+      backgroundColor: '#F5F3FF'
+      textColor: '#4C1D95'
+
+    rightPanel:
+      backgroundColor: '#1E1B4B'
+
+  hideDownloadButton: false
+  disableSearch: false
+  expandResponses: '200,201'
+  jsonSampleExpandLevel: 2
     
 rules:
   no-unused-components: warn

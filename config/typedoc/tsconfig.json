@@ -1,0 +1,21 @@
+{
+
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "../../tmp/typescript-sdk/dist",
+    "rootDir": "../../tmp/typescript-sdk/src",
+    "typeRoots": ["../../tmp/typescript-sdk/node_modules/@types"],
+    "types": ["node"]
+  },
+
+  "include": ["../../tmp/typescript-sdk/src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
+}

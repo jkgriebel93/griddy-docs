@@ -1,0 +1,23 @@
+<svg id="logo2" width="550" height="140" viewBox="0 0 550 140" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Formation icon -->
+                    <circle cx="25" cy="70" r="7" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+                    <circle cx="45" cy="70" r="7" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+                    <circle cx="65" cy="70" r="7" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+                    <circle cx="35" cy="90" r="7" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+                    <circle cx="55" cy="90" r="7" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+                    
+                    <circle cx="45" cy="70" r="11" fill="none" stroke="#F59E0B" stroke-width="3"/>
+                    <circle cx="45" cy="70" r="5" fill="#F59E0B"/>
+                    
+                    <line x1="45" y1="70" x2="45" y2="40" stroke="#06B6D4" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+                    <line x1="45" y1="70" x2="75" y2="50" stroke="#06B6D4" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+                    <line x1="45" y1="70" x2="75" y2="90" stroke="#06B6D4" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+                    
+                    <circle cx="45" cy="40" r="3" fill="#06B6D4"/>
+                    <circle cx="75" cy="50" r="3" fill="#06B6D4"/>
+                    <circle cx="75" cy="90" r="3" fill="#06B6D4"/>
+                    
+                    <!-- Text with tagline -->
+                    <text x="110" y="75" font-family="'Space Grotesk', sans-serif" font-size="56" font-weight="700" fill="#111827">GRIDDY</text>
+                    <text x="110" y="98" font-family="'Inter', sans-serif" font-size="16" font-weight="500" fill="#6B7280">Football Analytics Platform</text>
+                </svg>

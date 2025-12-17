@@ -1,0 +1,10 @@
+{
+  "entryPoints": ["../../tmp/typescript-sdk/src/index.ts"],
+  "outputs": [
+    {
+      "name": "html",
+      "path": "../../docs/docs/sdk-reference/typescript/"
+    }
+  ]
+
+}

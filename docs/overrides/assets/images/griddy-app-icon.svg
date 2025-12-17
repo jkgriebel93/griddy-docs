@@ -1,0 +1,31 @@
+<svg id="logo4" width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="appGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#6D28D9;stop-opacity:1"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Rounded square background -->
+                    <rect width="120" height="120" rx="26" fill="url(#appGrad)"/>
+                    
+                    <!-- Formation -->
+                    <circle cx="40" cy="60" r="8" fill="none" stroke="white" stroke-width="3"/>
+                    <circle cx="60" cy="60" r="8" fill="none" stroke="white" stroke-width="3"/>
+                    <circle cx="80" cy="60" r="8" fill="none" stroke="white" stroke-width="3"/>
+                    <circle cx="50" cy="80" r="8" fill="none" stroke="white" stroke-width="3"/>
+                    <circle cx="70" cy="80" r="8" fill="none" stroke="white" stroke-width="3"/>
+                    
+                    <!-- Highlighted -->
+                    <circle cx="60" cy="60" r="12" fill="none" stroke="#F59E0B" stroke-width="3.5"/>
+                    <circle cx="60" cy="60" r="5" fill="#F59E0B"/>
+                    
+                    <!-- Vectors -->
+                    <line x1="60" y1="60" x2="60" y2="35" stroke="#06B6D4" stroke-width="2.5" stroke-dasharray="3,3" opacity="0.7"/>
+                    <line x1="60" y1="60" x2="88" y2="45" stroke="#06B6D4" stroke-width="2.5" stroke-dasharray="3,3" opacity="0.7"/>
+                    <line x1="60" y1="60" x2="88" y2="75" stroke="#06B6D4" stroke-width="2.5" stroke-dasharray="3,3" opacity="0.7"/>
+                    
+                    <circle cx="60" cy="35" r="4" fill="#06B6D4"/>
+                    <circle cx="88" cy="45" r="4" fill="#06B6D4"/>
+                    <circle cx="88" cy="75" r="4" fill="#06B6D4"/>
+                </svg>

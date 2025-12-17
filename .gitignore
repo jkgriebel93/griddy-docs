@@ -35,3 +35,5 @@ Thumbs.db
 .env
 .env.local
 *.log
+
+*:Zone.Identifier
