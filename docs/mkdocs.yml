@@ -112,6 +112,13 @@ nav:
       - Player Stats: examples/python/fetch-player-stats.md
       - Game Predictions: examples/python/game-predictions.md
       - Fantasy Integration: examples/python/fantasy-integration.md
+    - TypeScript:
+      - Basic Usage: examples/typescript/basic-usage.md
+      - Async Patterns: examples/typescript/async-patterns.md
+      - Testing Strategies: examples/typescript/testing-strategies.md
+      - Player Stats: examples/typescript/fetch-player-stats.md
+      - Game Predictions: examples/typescript/game-predictions.md
+      - Fantasy Integration: examples/typescript/fantasy-integration.md
   - Tutorials:
       - tutorials/index.md
       - First API Call: tutorials/first-api-call.md
@@ -159,9 +166,11 @@ markdown_extensions:
       alternate_style: true
 
 
-# validation:
-#   nav:
-#     omitted_files: ignore
+validation:
+  nav:
+    omitted_files: info
+  links:
+    not_found: info
 #
 
 extra:

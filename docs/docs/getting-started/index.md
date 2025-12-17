@@ -1,77 +1,110 @@
 # Getting Started
 
-This guide will get you up and running with the Griddy NFL API SDK in under 5 minutes.
+This guide will help you get up and running with the Griddy NFL SDK quickly.
 
 ## Prerequisites
 
 Before you begin, ensure you have:
 
-- Python 3.9+ or Node.js 18+
-- An NFL.com account (for Pro API access)
+- **Python 3.14+** or **Node.js 18+**
+- An NFL.com account for obtaining authentication tokens
 
-## Installation
+## Quick Installation
 
 === "Python"
-```bash
-    pip install griddy-nfl
-```
 
-    Or with Poetry:
-```bash
-    poetry add griddy-nfl
-```
+    ```bash
+    pip install griddy
+    ```
+
+    For development with all dependencies:
+
+    ```bash
+    pip install griddy[dev]
+    ```
 
 === "TypeScript"
-```bash
-    npm install @griddy/nfl-sdk
-```
 
-    Or with Yarn:
-```bash
-    yarn add @griddy/nfl-sdk
-```
+    ```bash
+    npm install griddy-sdk
+    ```
+
+    Or with yarn:
+
+    ```bash
+    yarn add griddy-sdk
+    ```
 
 ## Your First API Call
 
 === "Python"
-```python
-    from griddy import NFLClient
 
-    # Create client (uses public API, no auth needed)
-    client = NFLClient()
+    ```python
+    from griddy.nfl import GriddyNFL
 
-    # Fetch current week's schedule
-    schedule = client.schedules.get_current()
-    
-    for game in schedule.games:
-        print(f"{game.away_team} @ {game.home_team}")
-```
+    # Initialize with your auth token
+    nfl = GriddyNFL(nfl_auth={"accessToken": "your_token"})
+
+    # Get games for a specific week
+    games = nfl.games.get_games(
+        season=2024,
+        season_type="REG",
+        week=1
+    )
+
+    # Print game matchups
+    for game in games.games:
+        home = game.home_team.abbreviation
+        away = game.away_team.abbreviation
+        print(f"{away} @ {home}")
+    ```
 
 === "TypeScript"
-```typescript
-    import { NFLClient } from '@griddy/nfl-sdk';
 
-    // Create client
-    const client = new NFLClient();
+    ```typescript
+    import { GriddyNFL } from 'griddy-sdk';
 
-    // Fetch current week's schedule
-    const schedule = await client.schedules.getCurrent();
-    
-    for (const game of schedule.games) {
-      console.log(`${game.awayTeam} @ ${game.homeTeam}`);
-    }
-```
+    // Initialize with your auth token
+    const nfl = new GriddyNFL({
+      nflAuth: { accessToken: 'your_token' }
+    });
+
+    // Get games for a specific week
+    const games = await nfl.games.getGames(2024, 'REG', 1);
+
+    // Print game matchups
+    games.games?.forEach(game => {
+      const home = game.homeTeam?.abbreviation;
+      const away = game.awayTeam?.abbreviation;
+      console.log(`${away} @ ${home}`);
+    });
+
+    // Clean up when done
+    nfl.close();
+    ```
 
 ## Next Steps
 
 <div class="grid cards" markdown>
 
--   [:octicons-key-16: __Authentication__](authentication.md)
+-   [:octicons-download-16: **Installation**](installation.md)
 
-    Set up authentication for Pro API access
+    Complete installation guide with all options
 
--   [:octicons-code-16: __Python Quickstart__](quickstart-python.md)
+-   [:octicons-key-16: **Authentication**](authentication.md)
 
-    Complete walkthrough for Python developers
+    Learn how to obtain and use authentication tokens
+
+-   [:octicons-code-16: **Python Quickstart**](quickstart-python.md)
+
+    Comprehensive Python SDK walkthrough
+
+-   [:octicons-code-16: **TypeScript Quickstart**](quickstart-typescript.md)
+
+    Comprehensive TypeScript SDK walkthrough
+
+-   [:octicons-question-16: **Choosing an SDK**](choosing-sdk.md)
+
+    Compare Python and TypeScript SDKs
 
 </div>
