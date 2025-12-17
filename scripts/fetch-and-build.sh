@@ -1,9 +1,7 @@
 #!/bin/bash
-
 set -e
-export ROOT_DIR=$1
-echo "ROOT_DIR: $ROOT_DIR"
 
+export ROOT_DIR=$1
 export SCRIPT_DIR="$ROOT_DIR/scripts"
 export SPEC_PATH="$ROOT_DIR/docs/docs/api-specs/nfl-com-api.yaml"
 
@@ -45,8 +43,6 @@ pipx install poetry
 git clone "https://github.com/${PYTHON_SDK_REPO}.git" "$PYTHON_SDK_DIR"
 git clone "https://github.com/${TYPESCRIPT_SDK_REPO}.git" "$TYPESCRIPT_SDK_DIR"
 echo "SDK repositories cloned"
-
-ls -lah "$TYPESCRIPT_SDK_DIR"
 
 echo "Step 3: Build TypeScript SDK documentation"
 bash "$SCRIPT_DIR/build-typescript-docs.sh"
