@@ -126,11 +126,11 @@ nav:
       - Live Score Tracker: tutorials/live-score-tracker.md
       - Player Comparison: tutorials/player-comparison.md
   - API Reference:
-    - NFL API: api-reference/index.html
+    - NFL API: api-reference/index.md
   - SDK Reference:
     - sdk-reference/index.md
     - Python SDK: sdk-reference/python/
-    - TypeScript SDK: sdk-reference/typescript/index.html
+    - TypeScript SDK: sdk-reference/typescript/
   - Contributing:
     - contributing/index.md
     - Code of Conduct: contributing/code-of-conduct.md
@@ -164,6 +164,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 
 validation:
