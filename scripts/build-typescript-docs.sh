@@ -10,6 +10,9 @@ TYPEDOC_CONFIG="$ROOT_DIR/config/typedoc/typedoc.json"
 echo "TypeScript config file: $TS_CONFIG"
 echo "Typedoc config file: $TYPEDOC_CONFIG"
 
+echo "Installed node packages:"
+npm ls
+
 npx typedoc --tsconfig "$TS_CONFIG" --options "$TYPEDOC_CONFIG"
 
 

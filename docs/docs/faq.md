@@ -59,7 +59,7 @@ Your token is expired or invalid. Obtain a new token from NFL.com.
 
 ### I can't find a specific endpoint
 
-Check the [API Reference](api-reference/index.html) for available endpoints. Not all NFL API endpoints are implemented yet.
+Check the [API Reference](api-reference/index.md) for available endpoints. Not all NFL API endpoints are implemented yet.
 
 ## Contributing
 
