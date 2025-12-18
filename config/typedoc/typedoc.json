@@ -4,7 +4,7 @@
   "plugin": ["typedoc-plugin-markdown"],
   "outputs": [
     {
-      "name": "html",
+      "name": "markdown",
       "path": "../../docs/docs/sdk-reference/typescript/"
     }
   ]

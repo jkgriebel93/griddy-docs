@@ -8,7 +8,6 @@ docs/site/
 tmp/
 !tmp/.gitkeep
 
-docs/site/
 
 # Python
 __pycache__/
